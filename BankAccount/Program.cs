@@ -11,7 +11,7 @@ namespace BankAccount
             {
                 // მოხმარებელს შემოაქვს მხოლოდ ანგარიშის ნომერი 
                 Console.WriteLine("Greetings (=^_^=)\nPlease enter your AccountNumber: ");
-                string AccountNumber = Console.ReadLine();
+                string accountNumber = Console.ReadLine();
                 // მომხმარებელი უთითებს თუ რამდენ ხნიანი ანაბარი სურს იმ შემთხვევაში თუ მონაცემი შეიყვანა არასწორად while ოპერატორის
                 // დახმარებით გავიმეორებ კითხვას იქამდე სანამ მომხარებელი სწორად არ შეიყვანს მონაცემს, ამასთან ერთად მივცემ მითითებასაც.
                 bool Deposit = true;
@@ -31,7 +31,7 @@ namespace BankAccount
                         Console.WriteLine("The minimum deposit must be 1 year!");
                 }
                 // კონსტრუქტორს გადავეცი მომხმარებლის მონცაემები და დავბეჭდე
-                CDAccount firstUser = new CDAccount(AccountNumber, date);
+                CDAccount firstUser = new CDAccount(accountNumber, date);
                 Console.WriteLine(firstUser.ToString());
                 // თანხის შეტანა/გამოტანა
                 Console.WriteLine("Do you want to Deposit or Withdraw money?(Yes/No)");
