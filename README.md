@@ -2,12 +2,12 @@
 The company creates software for banks and financial organizations. The company is currently working on a new system for managing customer accounts.
 One of my tasks was to create a class that reflected the deposit.
 
-The base class object has the following fields:
-• Account number;
-• Interest rate;
-• Account balance;
+The base class object has the following fields: 
+• Account number
+• Interest rate
+• Account balance
 
-I also created a Deposit Certificate (CD) derived class with the following data:
+I also created a Deposit Certificate (CD) derived class with the following data: 
 • Account number
 • Interest rate
 • Account balance
