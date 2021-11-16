@@ -10,8 +10,20 @@ namespace BankAccount
             try
             {
                 // მოხმარებელს შემოაქვს მხოლოდ ანგარიშის ნომერი 
-                Console.WriteLine("Greetings (=^_^=)\nPlease enter your AccountNumber: ");
-                string accountNumber = Console.ReadLine();
+                Console.WriteLine("Greetings (=^_^=)");
+                string accountNumber = string.Empty;
+                bool account = true;
+                while(account)
+                {
+                    Console.WriteLine("Please enter your AccountNumber");
+                    accountNumber = Console.ReadLine();
+                    if (accountNumber.Length > 18)
+                        Console.WriteLine("AccountNumber digits can't be greater then 18");
+                    else if (accountNumber.Length < 9)
+                        Console.WriteLine("AccountNumber digits can't be less then 9");
+                    else
+                        account = false;
+                }            
                 // მომხმარებელი უთითებს თუ რამდენ ხნიანი ანაბარი სურს იმ შემთხვევაში თუ მონაცემი შეიყვანა არასწორად while ოპერატორის
                 // დახმარებით გავიმეორებ კითხვას იქამდე სანამ მომხარებელი სწორად არ შეიყვანს მონაცემს, ამასთან ერთად მივცემ მითითებასაც.
                 bool Deposit = true;
@@ -41,7 +53,7 @@ namespace BankAccount
                     bool answerBool = true;
                     while (answerBool)
                     {
-                        Console.WriteLine("\nChoose A, B or C:\nA)Deposit\nB)Withdraw\nC)Exit");
+                        Console.WriteLine("============================================================================\nChoose A, B or C:\nA)Deposit\nB)Withdraw\nC)Exit\n============================================================================");
                         char depositOrWithdraw = Console.ReadLine()[0];
                         if (depositOrWithdraw.Equals('A') || depositOrWithdraw.Equals('a'))
                         {
@@ -56,7 +68,6 @@ namespace BankAccount
                                 if (again.Equals("No") || again.Equals("no"))
                                 {
                                     firstUser.ToString();
-                                    Console.WriteLine("Bye <3");
                                     continueDeposit = false;
                                 }
                                 if (again.Equals("Yes") || again.Equals("yes"))
@@ -104,13 +115,13 @@ namespace BankAccount
                     Console.WriteLine("Bye <3");
                 }
                 else
-                    Console.WriteLine("I don't get it (0_o)");               
+                    Console.WriteLine("I don't get it (0_o)");
                 // ანგარიშების სია
                 ArrayList accounts = new ArrayList();
-                accounts.Add(new CDAccount("accountNumber1","2.5%",1000,2024));
-                accounts.Add(new CDAccount("accountNumber2","2.8%",5600,2022));
-                accounts.Add(new CDAccount("accountNumber3","3.2%",8700,2025));
-                accounts.Add(new CDAccount("accountNumber4","2.9%",2450,2023));
+                accounts.Add(new CDAccount("accountNumber1", "2.5%", 1000, 2024));
+                accounts.Add(new CDAccount("accountNumber2", "2.8%", 5600, 2022));
+                accounts.Add(new CDAccount("accountNumber3", "3.2%", 8700, 2025));
+                accounts.Add(new CDAccount("accountNumber4", "2.9%", 2450, 2023));
                 // ინფორმაცია ბალანსის კლებადობის მიხედვით
                 accounts.Sort(new CDAccount());
                 Console.WriteLine("\n!!!!!!!!sort by descending accountBalance!!!!!!!!\n");
